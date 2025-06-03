@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Página personal de Leyla Diney Rosas Ccama, estudiante de Contabilidad en la Universidad Católica San Pablo.">
+    <meta name="keywords" content="Leyla Diney Rosas Ccama, Contabilidad, Universidad Católica San Pablo, Pensamiento Computacional">
+    <meta name="author" content="Leyla Diney Rosas Ccama">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leyla Diney Rosas Ccama</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        :root {
+            --azulgrana-oscuro: #2e003e;
+            --azulgrana-claro: #960018;
+            --texto: #333;
+            --fondo: #fafafa;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            background-color: var(--fondo);
+            color: var(--texto);
+            scroll-behavior: smooth;
+        }
+
+        header {
+            background: linear-gradient(90deg, var(--azulgrana-oscuro), var(--azulgrana-claro));
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 3rem;
+            margin: 0;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            margin-top: 10px;
+        }
+
+        nav {
+            background-color: var(--azulgrana-oscuro);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: center;
+            margin: 0;
+            padding: 10px 0;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin: 0 20px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1rem;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: var(--azulgrana-claro);
+        }
+
+        main section {
+            display: none;
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 30px;
+            background-color: white;
+            border-radius: 12px;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+        }
+
+        main section.active {
+            display: block;
+            animation: fadeIn 0.6s ease-in-out;
+        }
+
+        h2 {
+            color: var(--azulgrana-oscuro);
+        }
+
+        a {
+            color: var(--azulgrana-claro);
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        footer {
+            background-color: var(--azulgrana-oscuro);
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+                gap: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Leyla Diney Rosas Ccama</h1>
+        <p>Estudiante de Contabilidad - Universidad Católica San Pablo</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#" onclick="showSection('sobremi')">Sobre mí</a></li>
+            <li><a href="#" onclick="showSection('profesor')">Profesor</a></li>
+            <li><a href="#" onclick="showSection('companeros')">Compañeros</a></li>
+            <li><a href="#" onclick="showSection('contacto')">Contacto</a></li>
+            <li><a href="#" onclick="showSection('redes')">Redes Sociales</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section id="sobremi" class="active">
+            <h2>Sobre mí</h2>
+            <p>Hola, soy Leyla Diney Rosas Ccama. Actualmente estoy en mi tercer año de estudios universitarios, cursando el quinto ciclo de la carrera de Contabilidad en la Universidad Católica San Pablo.</p>
+        </section>
+
+        <section id="profesor">
+            <h2>Profesor</h2>
+            <p>Actualmente curso la asignatura de Pensamiento Computacional con el profesor <a href="https://www.linkedin.com/in/ecuadrosv/" target="_blank">Ernesto Cuadro Vargas</a>.</p>
+        </section>
+
+        <section id="companeros">
+            <h2>Compañeros de Clase</h2>
+            <p>Próximamente añadiré una lista con mis compañeros y enlaces a sus páginas web personales.</p>
+        </section>
+
+        <section id="contacto">
+            <h2>Contacto</h2>
+            <p>Puedes contactarme a través de mi correo: <a href="mailto:leyla.rosas@ucsp.edu.pe">leyla.rosas@ucsp.edu.pe</a>.</p>
+        </section>
+
+        <section id="redes">
+            <h2>Redes Sociales</h2>
+            <ul>
+                <li><a href="https://www.linkedin.com/in/leyla-diney-rosas-ccama-872415369" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a></li>
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025. Todos los derechos reservados.</p>
+    </footer>
+
+    <script>
+        function showSection(id) {
+            const sections = document.querySelectorAll('main section');
+            sections.forEach(section => {
+                section.classList.remove('active');
+            });
+            document.getElementById(id).classList.add('active');
+        }
+    </script>
+</body>
+</html>
